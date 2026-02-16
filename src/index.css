@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+main {
+  width: 100%;
+}
+
+.hero h2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #38bdf8;
+}
+
+.hero p {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #38bdf8;
+  color: #020617;
+}
+
+.hero button.secondary {
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.hero-role {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #94a3b8;
+}

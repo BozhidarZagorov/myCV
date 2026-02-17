@@ -77,6 +77,32 @@ export default function CV() {
         </div>
 
 
+        {/* EDUCATION */}
+        <div className="cv-block">
+          <h3 className="cv-block-title">Education</h3>
+
+          <div className="cv-item">
+            <h4>Sofia University – FMI</h4>
+            <span className="cv-meta">2020 – 2022</span>
+            <ul>
+              <li>
+                Python Fundamentals
+              </li>
+            </ul>
+          </div>
+
+          <div className="cv-item">
+            <h4>
+              High School of Natural Sciences & Mathematics "Ivan Vazov"
+            </h4>
+            <span className="cv-meta">2012 – 2020</span>
+            <ul>
+              <li>C++ Fundamentals & OOP</li>
+              <li>C# Basics</li>
+            </ul>
+          </div>
+        </div>
+
     </section>
   );
 }

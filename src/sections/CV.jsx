@@ -26,6 +26,33 @@ export default function CV() {
         </div>
 
 
+        {/* EXPERIENCE */}
+        <div className="cv-block">
+          <h3 className="cv-block-title">Experience</h3>
+        <div className="cv-row">
+          <div className="cv-item">
+            <h4>Full-Stack Web Developer</h4>
+            <span className="cv-meta">2026 – Present</span>
+            <ul>
+              <li>Creating scalable web applications with React</li>
+              <li>Developing modern mobile applications using React Native & TypeScript</li>
+            </ul>
+          </div>
+           <div className="cv-image">
+              <img src="/profilepic.jpg" alt="Your Name" />
+          </div>
+        </div>
+          <div className="cv-item">
+            <h4>Full-Stack Developer (Training & Projects)</h4>
+            <span className="cv-meta">SoftUni — 2023 – 2025</span>
+            <ul>
+              <li>Modern React applications</li>
+              <li>Advanced JavaScript architecture</li>
+              <li>Backend-only web applications</li>
+            </ul>
+          </div>
+      </div>
+
     </section>
   );
 }

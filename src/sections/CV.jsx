@@ -103,6 +103,82 @@ export default function CV() {
           </div>
         </div>
 
+         {/* CERTIFICATES */}
+        <div className="cv-block">
+          <h3 className="cv-block-title">Certificates</h3>
+
+          <div className="cv-item">
+            <h4>
+              <a
+                href="https://softuni.bg/Certificates/Details/256066/3f486ad8"
+                target="_blank" rel="noopener noreferrer"
+              >
+                Front-End Developer with JavaScript – SoftUni
+              </a>
+            </h4>
+            <span className="cv-meta">2024 – 2025</span>
+
+            <ul>
+              <li>
+                <a
+                  href="https://softuni.bg/Certificates/Details/204477/cc6935ed"
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  Programming Basics (6.00)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://softuni.bg/Certificates/Details/222055/c913ca43"
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  Programming Fundamentals (6.00)
+                </a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/227925/d0e7e7e7" 
+                target="_blank" rel="noopener noreferrer">JS Advanced (6.00)</a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/231938/844f26a0" 
+                target="_blank" rel="noopener noreferrer">JS Applications (6.00)</a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/237692/2ba42336" 
+                target="_blank" rel="noopener noreferrer">Js Back-End (6.00)</a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/241499/e217fa51" 
+                target="_blank" rel="noopener noreferrer">ReactJS (6.00)</a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/245830/d6ab997c" 
+                target="_blank" rel="noopener noreferrer">HTML & CSS (6.00)</a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/245039/78d54968" 
+                target="_blank" rel="noopener noreferrer">TypeScript (6.00)</a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/252736/dee33b68" 
+                target="_blank" rel="noopener noreferrer">Software Engineering and DevOps (6.00)</a>
+              </li>
+              <li>
+                <a 
+                href="https://softuni.bg/Certificates/Details/255495/b3baf2c5" 
+                target="_blank" rel="noopener noreferrer">Containers and Cloud (6.00)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
     </section>
   );
 }

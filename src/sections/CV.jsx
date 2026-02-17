@@ -179,6 +179,34 @@ export default function CV() {
           </div>
         </div>
 
+        {/* SKILLS */}
+        <div className="cv-block">
+          <h3 className="cv-block-title">Skills</h3>
+
+          <div className="skills-list">
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>React</span>
+            <span>React Native</span>
+            <span>Node.js</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Tailwind</span>
+            <span>Firebase</span>
+            <span>Supabase</span>
+            <span>Cloudinary</span>
+            <span>Docker</span>
+            <span>Azure</span>
+            <span>Git</span>
+            <span>GitHub Actions & Projects</span>
+            <span>Terraform</span>
+            <span>Grafana</span>
+            <span>Alertmanager</span>
+            <span>Blackbox</span>
+          </div>
+        </div>
+
+      </div>
     </section>
   );
 }

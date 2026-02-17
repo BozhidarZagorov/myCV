@@ -53,6 +53,30 @@ export default function CV() {
           </div>
       </div>
 
+        {/* PROJECTS */}
+        <div className="cv-block">
+          <h3 className="cv-block-title">Projects</h3>
+
+          <div className="cv-item">
+            <h4>
+              <a
+                href="https://www.youtube.com/watch?v=LKXPG_pHHtk"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NASA Modeling Project (Team Lead)
+              </a>
+            </h4>
+            <span className="cv-meta">2019 – 2020</span>
+          </div>
+
+          <div className="cv-item">
+            <h4>LISH – XOR Cipher Project</h4>
+            <span className="cv-meta">Python to C++ — 2019</span>
+          </div>
+        </div>
+
+
     </section>
   );
 }

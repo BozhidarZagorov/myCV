@@ -10,8 +10,8 @@ html {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
+  background: #08132b;
+  color: #e5e7ebdc;
 }
 
 main {
@@ -82,4 +82,104 @@ main {
   margin-top: 1rem;
   font-size: 1.3rem;
   color: #94a3b8;
+}
+
+.cv-section {
+  padding: 6rem 2rem;
+  background: #0b1220;
+}
+
+.cv-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cv-title {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.cv-block {
+  margin-bottom: 4rem;
+}
+
+.cv-block-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #38bdf8;
+}
+
+.cv-item {
+  margin-bottom: 2.5rem;
+}
+
+.cv-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cv-meta {
+  display: block;
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.cv-item p {
+  margin-bottom: 1rem;
+  color: #cbd5f5;
+}
+
+.cv-item ul {
+  padding-left: 1.2rem;
+  color: #cbd5f5;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skills-list span {
+  padding: 0.5rem 1rem;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.cv-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.cv-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #000000;
+}
+
+.cv-item {
+  flex: 1;
+}
+
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.cv-tags span {
+  background: #1e293b;
+  color: #38bdf8;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
 }

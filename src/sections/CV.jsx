@@ -1,4 +1,22 @@
 export default function CV() {
+    const skills = [
+      { name: "JavaScript", level: 90},
+      { name: "React", level: 85},
+      { name: "Firebase", level: 80},
+      { name: "Node.js", level: 75},
+      { name: "TypeScript", level: 75},
+      { name: "Tailwind", level: 80},
+      { name: "CSS", level: 75},
+      { name: "React Native", level: 78},
+      { name: "HTML", level: 75},
+      { name: "Docker", level: 75},
+      { name: "Git", level: 79},
+      { name: "GitHub Actions & Projects", level: 80},
+      { name: "Terraform", level: 78}
+    ];
+
+  const sortedSkills = [...skills].sort((a, b) => b.level - a.level);
+
   return (
     <section id="cv" className="cv-section">
       <div className="cv-container">
@@ -12,7 +30,7 @@ export default function CV() {
           <p className="cv-about-text">
             Full-Stack JavaScript developer with a strong analytical mindset and a passion
             for building scalable web applications. My background in competitive chess,
-            Country-Level linguistics, and mathematics competitions, fishing and woorworking has strengthened
+            National-level competition in linguistics, and mathematics competitions, fishing and woorworking has strengthened
             my strategic thinking and structured problem-solving skills.
           </p>
           <div className="cv-tags">

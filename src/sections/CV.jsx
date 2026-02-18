@@ -222,28 +222,27 @@ export default function CV() {
 
          {/* SKILLS */}
         <div className="cv-block">
-          <h3 className="cv-block-title">Skills</h3>
+          <h3 className="cv-block-title">Other Skills</h3>
 
           <div className="skills-list">
-            <span>JavaScript</span>
-            <span>TypeScript</span>
-            <span>React</span>
-            <span>React Native</span>
-            <span>Node.js</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>Tailwind</span>
-            <span>Firebase</span>
+            <span>Vite</span>
             <span>Supabase</span>
+            <span>Vercel</span>
             <span>Cloudinary</span>
-            <span>Docker</span>
             <span>Azure</span>
-            <span>Git</span>
-            <span>GitHub Actions & Projects</span>
-            <span>Terraform</span>
+            <span>nginx</span>
             <span>Grafana</span>
             <span>Alertmanager</span>
             <span>Blackbox</span>
+            <span>react-i18next</span>
+            <span>EmailJS</span>
+            <span>Expo</span>
+            <span>Async Storage</span>
+            <span>Express</span>
+            <span>Recharts</span>
+            <span>PostgreSQL</span>
+            <span>Python</span>
+            <span>C++</span>
           </div>
         </div>
 

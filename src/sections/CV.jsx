@@ -89,8 +89,8 @@ export default function CV() {
           </div>
 
           <div className="cv-item">
-            <h4>LISH – XOR Cipher Project</h4>
-            <span className="cv-meta">Python to C++ — 2019</span>
+            <h4>HSSIMI – High School Student Institute of Mathematics and Informatics</h4>
+            <span className="cv-meta">XOR Cipher Project - Python to C++ — 2019</span>
           </div>
         </div>
 

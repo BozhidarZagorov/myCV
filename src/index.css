@@ -137,6 +137,12 @@ main {
   color: #cbd5f5;
 }
 
+.cv-block:not(:last-child) {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -162,7 +168,8 @@ main {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #000000;
+  border: 4px solid #1e293b;
+;
 }
 
 .cv-item {

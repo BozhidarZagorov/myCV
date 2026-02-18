@@ -54,7 +54,8 @@ export default function CV() {
         {/* ABOUT ME */}
         <div className="cv-block">
           <h3 className="cv-block-title">About Me</h3>
-
+        <div className="cv-row">
+        <div>
           <p className="cv-about-text">
             Full-Stack JavaScript developer with a strong analytical mindset and a passion
             for building scalable web applications. My background in competitive chess,
@@ -68,6 +69,30 @@ export default function CV() {
             <span>🎣 Fishing</span>
             <span>🪵 Woodworking</span>
           </div>
+        </div>
+          <div className="cv-image">
+              <img src="/profilepic.jpg" alt="Your Name" />
+              <a
+                href="https://github.com/BozhidarZagorov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-button"
+              >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="20"
+                height="20"
+                style={{ marginRight: "0.5rem" }}
+              >
+                <path d="M12 0a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.22c-3.34.73-4.04-1.6-4.04-1.6a3.18 3.18 0 00-1.33-1.75c-1.09-.74.08-.73.08-.73a2.51 2.51 0 011.83 1.23 2.56 2.56 0 003.5 1 2.55 2.55 0 01.76-1.6c-2.66-.3-5.47-1.34-5.47-5.95a4.65 4.65 0 011.24-3.23 4.3 4.3 0 01.12-3.18s1-.32 3.3 1.23a11.4 11.4 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 01.12 3.18 4.65 4.65 0 011.24 3.23c0 4.62-2.81 5.64-5.48 5.94a2.85 2.85 0 01.81 2.22v3.3c0 .32.21.7.83.58A12 12 0 0012 0z"/>
+              </svg>
+                GitHub
+              </a>
+          </div>
+        </div>
+          
 
         </div>
 
@@ -75,7 +100,7 @@ export default function CV() {
         {/* EXPERIENCE */}
         <div className="cv-block">
           <h3 className="cv-block-title">Experience</h3>
-        <div className="cv-row">
+
           <div className="cv-item">
             <h4>Full-Stack Web Developer</h4>
             <span className="cv-meta">2026 – Present</span>
@@ -84,10 +109,7 @@ export default function CV() {
               <li>Developing modern mobile applications using React Native & TypeScript</li>
             </ul>
           </div>
-           <div className="cv-image">
-              <img src="/profilepic.jpg" alt="Your Name" />
-          </div>
-        </div>
+        
           <div className="cv-item">
             <h4>Full-Stack Developer (Training & Projects)</h4>
             <span className="cv-meta">SoftUni — 2023 – 2025</span>
@@ -98,6 +120,28 @@ export default function CV() {
             </ul>
           </div>
       </div>
+
+        {/* PROJECTS */}
+        <div className="cv-block">
+          <h3 className="cv-block-title">Projects</h3>
+
+          <div className="cv-item">
+            <h4>
+              <a
+                href="heaven-guesthouse.web.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GuestHouse Haven
+              </a></h4>
+                <span className="cv-meta">
+                  A full-featured apartment booking platform featuring an interactive calendar for availability, Google Maps integration, Google authentication, detailed apartment listings with photos and prices, a gallery showcasing the surrounding area, and a one-click reservation system with automatic email confirmations.
+                </span>
+
+          </div>
+
+        </div>
+
 
         {/* EARLY PROJECTS */}
         <div className="cv-block">

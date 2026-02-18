@@ -1,4 +1,10 @@
+import { useEffect, useRef, useState } from "react";
+
 export default function CV() {
+  const skillsRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  
     const skills = [
       { name: "JavaScript", level: 90},
       { name: "React", level: 85},
@@ -16,6 +22,28 @@ export default function CV() {
     ];
 
   const sortedSkills = [...skills].sort((a, b) => b.level - a.level);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+          }
+        },
+        { threshold: 0.3 } // triggers when 30% visible
+      );
+    
+      if (skillsRef.current) {
+        observer.observe(skillsRef.current);
+      }
+    
+      return () => {
+        if (skillsRef.current) {
+          observer.unobserve(skillsRef.current);
+        }
+      };
+    }, []);
+
 
   return (
     <section id="cv" className="cv-section">
@@ -245,6 +273,7 @@ export default function CV() {
             <span>C++</span>
           </div>
         </div>
+
 
       </div>
     </section>

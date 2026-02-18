@@ -137,6 +137,37 @@ main {
   color: #cbd5f5;
 }
 
+.cv-image {
+  flex: 0 0 180px; /* fixed width for profile image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #24292f; /* GitHub dark */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #24292f;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.github-button:hover {
+  background-color: #2d333b; /* lighter on hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #ffffff;
+}
+
+
 .cv-block:not(:last-child) {
   padding-bottom: 3rem;
   border-bottom: 1px solid #1e293b;
@@ -160,7 +191,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 3rem;
 }
 
 .cv-image img {
@@ -173,8 +203,10 @@ main {
 }
 
 .cv-item {
-  flex: 1;
+  flex: 1; /* text grows to fill space next to image */
+  margin-bottom: 2rem;
 }
+
 
 .cv-tags {
   display: flex;
@@ -223,4 +255,24 @@ main {
   background: #38bdf8;
   border-radius: 999px;
   transition: width 1.2s ease;
+}
+
+
+@media (max-width: 768px) {
+  .cv-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cv-image {
+    margin-top: 1.5rem;
+  }
+  
+  .cv-image img {
+    margin-top: 2rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }

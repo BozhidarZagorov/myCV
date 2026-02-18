@@ -197,7 +197,30 @@ export default function CV() {
           </div>
         </div>
 
-        {/* SKILLS */}
+        {/* SKILLS PROFICIENCY */}
+        <div className="cv-block" ref={skillsRef}>
+          <h3 className="cv-block-title">Skills Proficiency</h3>
+
+          <div className="skills-grid">
+
+            {sortedSkills.map((skill, index) => (
+              <div className="skill-item" key={index}>
+                <div className="skill-header">
+                  <span>{skill.name}</span>
+                </div>
+                <div className="skill-bar">
+                  <div
+                    className="skill-fill"
+                    style={{ width: visible ? `${skill.level}%` : "0%" }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+         {/* SKILLS */}
         <div className="cv-block">
           <h3 className="cv-block-title">Skills</h3>
 

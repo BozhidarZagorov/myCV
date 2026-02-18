@@ -71,9 +71,9 @@ export default function CV() {
           </div>
       </div>
 
-        {/* PROJECTS */}
+        {/* EARLY PROJECTS */}
         <div className="cv-block">
-          <h3 className="cv-block-title">Projects</h3>
+          <h3 className="cv-block-title">Early Projects</h3>
 
           <div className="cv-item">
             <h4>

@@ -35,7 +35,7 @@ export default function CV() {
           </p>
           <div className="cv-tags">
             <span>♟ FIDE Rated Chess Player (~1800 inactive)</span>
-            <span>🗣️ Country-Level Linguistics Competition Participant</span>
+            <span>🗣️ Participant in National-level Linguistics competition </span>
             <span>📐 Mathematics Competition Experience</span>
             <span>🎣 Fishing</span>
             <span>🪵 Woodworking</span>

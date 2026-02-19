@@ -1,4 +1,25 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
 
 export default function CV() {
   const skillsRef = useRef(null);
@@ -30,7 +51,7 @@ export default function CV() {
             setVisible(true);
           }
         },
-        { threshold: 0.3 } // triggers when 30% visible
+        { threshold: 0.1 } // triggers on 10% visible
       );
     
       if (skillsRef.current) {
@@ -47,12 +68,19 @@ export default function CV() {
 
   return (
     <section id="cv" className="cv-section">
-      <div className="cv-container">
-
-        <h2 className="cv-title">Resume</h2>
+      <motion.div 
+        className="cv-container"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.05 }}
+      >
+        <motion.h2 className="cv-title" variants={item}>
+          Resume
+        </motion.h2>
 
         {/* ABOUT ME */}
-        <div className="cv-block">
+        <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">About Me</h3>
         <div className="cv-row">
         <div>
@@ -94,11 +122,11 @@ export default function CV() {
         </div>
           
 
-        </div>
+        </motion.div>
 
 
         {/* EXPERIENCE */}
-        <div className="cv-block">
+        <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">Experience</h3>
 
           <div className="cv-item">
@@ -119,10 +147,10 @@ export default function CV() {
               <li>Backend-only web applications</li>
             </ul>
           </div>
-      </div>
+      </motion.div>
 
         {/* PROJECTS */}
-        <div className="cv-block">
+        <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">Projects</h3>
 
           <div className="cv-item">
@@ -140,11 +168,11 @@ export default function CV() {
 
           </div>
 
-        </div>
+        </motion.div>
 
 
         {/* EARLY PROJECTS */}
-        <div className="cv-block">
+        <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">Early Projects</h3>
 
           <div className="cv-item">
@@ -164,11 +192,11 @@ export default function CV() {
             <h4>HSSIMI – High School Student Institute of Mathematics and Informatics</h4>
             <span className="cv-meta">XOR Cipher Project - Python to C++ — 2019</span>
           </div>
-        </div>
+        </motion.div>
 
 
         {/* EDUCATION */}
-        <div className="cv-block">
+        <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">Education</h3>
 
           <div className="cv-item">
@@ -191,10 +219,10 @@ export default function CV() {
               <li>C# Basics</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
          {/* CERTIFICATES */}
-        <div className="cv-block">
+        <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">Certificates</h3>
 
           <div className="cv-item">
@@ -267,33 +295,44 @@ export default function CV() {
               </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* SKILLS PROFICIENCY */}
-        <div className="cv-block" ref={skillsRef}>
+        <motion.div 
+          className="cv-block" 
+          ref={skillsRef}
+          variants={item}
+        >
           <h3 className="cv-block-title">Skills Proficiency</h3>
 
-          <div className="skills-grid">
-
+          <motion.div 
+            className="skills-grid"
+            variants={container}
+          >
             {sortedSkills.map((skill, index) => (
-              <div className="skill-item" key={index}>
+              <motion.div 
+                className="skill-item" 
+                key={index}
+                variants={item}
+              >
                 <div className="skill-header">
                   <span>{skill.name}</span>
                 </div>
                 <div className="skill-bar">
-                  <div
+                  <motion.div
                     className="skill-fill"
-                    style={{ width: visible ? `${skill.level}%` : "0%" }}
-                  ></div>
+                    initial={{ width: "0%" }}
+                    animate={{ width: visible ? `${skill.level}%` : "0%" }}
+                    transition={{ duration: 1, delay: index * 0.1 }}
+                  ></motion.div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
          {/* SKILLS */}
-        <div className="cv-block">
+        <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">Other Skills</h3>
 
           <div className="skills-list">
@@ -318,10 +357,10 @@ export default function CV() {
             <span>C++</span>
             <span>C#</span>
           </div>
-        </div>
+        </motion.div>
 
 
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -40,8 +40,8 @@ export default function Hero() {
         </motion.p>
 
         <motion.div className="hero-actions" variants={item}>
-          <button>View CV</button>
-          <button className="secondary">Contact Me</button>
+          <a href="#cv" className="hero-button">View CV</a>
+          <a href="#contact" className="hero-button secondary">Contact Me</a>
         </motion.div>
       </motion.div>
     </section>

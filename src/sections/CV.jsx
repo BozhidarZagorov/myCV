@@ -298,6 +298,7 @@ export default function CV() {
 
           <div className="skills-list">
             <span>Vite</span>
+            <span>Postman</span>
             <span>Supabase</span>
             <span>Vercel</span>
             <span>Cloudinary</span>
@@ -315,6 +316,7 @@ export default function CV() {
             <span>PostgreSQL</span>
             <span>Python</span>
             <span>C++</span>
+            <span>C#</span>
           </div>
         </div>
 

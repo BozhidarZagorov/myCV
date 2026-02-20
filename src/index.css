@@ -184,7 +184,7 @@ main {
 
 .skills-list span {
   padding: 0.5rem 1rem;
-  border: 1px solid #334155;
+  border: 3px solid #334155;
   border-radius: 6px;
   font-size: 0.9rem;
 }
@@ -417,6 +417,15 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .cv-project-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cv-project-image-wrapper {
+    width: 100%;
   }
 
   .cv-image {

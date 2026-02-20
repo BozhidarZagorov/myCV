@@ -335,6 +335,72 @@ export default function CV() {
             </div>
           </div>
 
+          {/* CarsVIFI */}
+          <div className="cv-project-row">
+            <div className="cv-project-text">
+              <h2>CarsVIFI</h2>
+              <p className="cv-meta">
+                “React + Firebase web app for tracking car renewals (vignette, insurance, inspection, fire extinguisher) with email reminders, image uploads via Cloudinary, and CI/CD to Firebase Hosting.”
+              </p>
+              <div className="skills-list">
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Vite</span>
+                <span>CSS</span>
+                <span>Firebase</span>
+                <span>Google Oauth</span>
+                <span>EmailJS</span>
+                <span>Cloudinary</span>
+                <span>GitHub Actions - CI/CD</span>
+                <span>Route-Guard</span>
+              </div>
+            </div>
+            <div className="cv-project-image-wrapper">
+              <a
+                href="https://carvifi-bg.web.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="CarsVIFI.png"
+                  alt="CarsVIFI preview"
+                  className="cv-project-image"
+                />
+              </a>
+            </div>
+          </div>
+
+        </motion.div>
+
+        {/* PROJECTS IN PROGRESS */}
+        <motion.div className="cv-block" variants={item}>
+          <h1 className="cv-block-title">Projects in Progress</h1>
+
+          <div className="cv-item">
+            <h2><a
+                href="https://github.com/BozhidarZagorov/Subscription-System"
+                target="_blank"
+                rel="noopener noreferrer"
+              >subscription-system</a></h2>
+            <p className="cv-meta">
+                Subscription Billing System — A full-stack SaaS-style application for managing subscriptions, 
+                invoices, and payments. Built with a React frontend (dashboard with MRR, churn rate, 
+                revenue-by-plan charts, and active subscriptions), a Node.js/Express REST API, 
+                and a PostgreSQL backend with normalized schema, constraints, triggers, and analytics queries. 
+                Demonstrates end-to-end design from UI to database.
+              </p>
+            <div className="skills-list">
+              <span>JavaScript</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>RESTful APIs</span>
+              <span>PostgreSQL</span>
+              <span>React</span>
+              <span>Vite</span>
+              <span>Recharts</span>
+              <span>Axios</span>
+            </div>
+          </div>
         </motion.div>
 
 

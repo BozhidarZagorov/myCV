@@ -301,6 +301,38 @@ export default function CV() {
             </div>
           </div>
 
+          {/* Health Mobile App */}
+          <div className="cv-project-row">
+            <div className="cv-project-text">
+              <h2>Health Mobile App</h2>
+              <p className="cv-meta">
+                Health Mobile App (Injection Tracker) — React Native/Expo app that helps users track medication injections and resupply. 
+                Features: set first injection and resupply dates; auto-generated recurring schedule (injections every 14 days, resupply every 28 days); 
+                calendar view with color-coded dots; “This Month” screen to mark items done; 
+                full history with edit/delete; scheduled reminders (day before and on the day); 
+                local data persistence (AsyncStorage); light/dark theme. Implemented with TypeScript, Expo Router, and React Navigation.
+              </p>
+              <div className="skills-list">
+                <span>TypeScript</span>
+                <span>React Native</span>
+                <span>Expo</span>
+                <span>AsyncStorage</span>
+                <span>Notifications</span>
+              </div>
+            </div>
+            <div className="cv-project-image-wrapper">
+              <a
+                href="https://github.com/BozhidarZagorov/HealthMobileApp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="HealthApp.jpg"
+                  alt="Health Mobile App preview"
+                  className="cv-project-image"
+                />
+              </a>
+            </div>
           </div>
 
         </motion.div>

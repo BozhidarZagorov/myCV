@@ -32,7 +32,7 @@ export default function CV() {
       { name: "Firebase", level: 80},
       { name: "Node.js", level: 75},
       { name: "TypeScript", level: 75},
-      { name: "Tailwind", level: 80},
+      { name: "Tailwind CSS", level: 80},
       { name: "CSS", level: 75},
       { name: "React Native", level: 78},
       { name: "HTML", level: 75},

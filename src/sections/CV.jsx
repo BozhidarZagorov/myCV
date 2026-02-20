@@ -65,6 +65,43 @@ export default function CV() {
       };
     }, []);
 
+    useEffect(() => {
+      const chips = document.querySelectorAll(".skills-list span");
+      const colors = [
+        "#38bdf8",
+        "#22c55e",
+        "#eab308",
+        "#f97316",
+        "#ec4899",
+        "#a855f7"
+      ];
+
+      const handleEnter = (e) => {
+        const target = e.currentTarget;
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        target.style.backgroundColor = randomColor;
+        target.style.color = "#020617";
+      };
+
+      const handleLeave = (e) => {
+        const target = e.currentTarget;
+        target.style.backgroundColor = "";
+        target.style.color = "";
+      };
+
+      chips.forEach((chip) => {
+        chip.addEventListener("mouseenter", handleEnter);
+        chip.addEventListener("mouseleave", handleLeave);
+      });
+
+      return () => {
+        chips.forEach((chip) => {
+          chip.removeEventListener("mouseenter", handleEnter);
+          chip.removeEventListener("mouseleave", handleLeave);
+        });
+      };
+    }, []);
+
 
   return (
     <section id="cv" className="cv-section">

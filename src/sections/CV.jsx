@@ -264,6 +264,42 @@ export default function CV() {
             </div>
           </div>
 
+          {/* My Home Recipes */}
+          <div className="cv-project-row">
+            <div className="cv-project-text">
+              <h2>My Home Recipes</h2>
+              <p className="cv-meta">
+                MyHomeRecipes is a single-page web app where users can browse, 
+                create, and edit recipes. It uses React and Vite on the front end, 
+                Supabase for authentication and database, and Cloudinary for recipe images. 
+                The app is deployed on Vercel and includes login/register, Google OAuth, and protected create/edit flows.
+              </p>
+              <div className="skills-list">
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Vite</span>
+                <span>Tailwind CSS</span>
+                <span>Cloudinary</span>
+                <span>Supabase</span>
+                <span>PostgreSQL</span>
+                <span>Vercel</span>
+                <span>Google Oauth</span>
+              </div>
+            </div>
+            <div className="cv-project-image-wrapper">
+              <a
+                href="https://homerecipes.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="HomeRecipes.png"
+                  alt="My Home Recipes preview"
+                  className="cv-project-image"
+                />
+              </a>
+            </div>
+          </div>
 
           </div>
 

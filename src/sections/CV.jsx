@@ -251,15 +251,19 @@ export default function CV() {
             </div>
             <div className="cv-project-image-wrapper">
               <a
-                href="heaven-guesthouse.web.app"
+                href="https://weatherapp-863c1.web.app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GuestHouse Haven
-              </a></h4>
-                <span className="cv-meta">
-                  A full-featured apartment booking platform featuring an interactive calendar for availability, Google Maps integration, Google authentication, detailed apartment listings with photos and prices, a gallery showcasing the surrounding area, and a one-click reservation system with automatic email confirmations.
-                </span>
+                <img
+                  src="weatherApp.png"
+                  alt="Weather App preview"
+                  className="cv-project-image"
+                />
+              </a>
+            </div>
+          </div>
+
 
           </div>
 

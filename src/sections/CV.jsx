@@ -188,7 +188,45 @@ export default function CV() {
 
         {/* PROJECTS */}
         <motion.div className="cv-block" variants={item}>
-          <h3 className="cv-block-title">Projects</h3>
+          <h1 className="cv-block-title">Projects</h1>
+
+          {/* House Haven */}
+          <div className="cv-project-row">
+            <div className="cv-project-text">
+              <h2>GuestHouse Haven</h2>
+              <p className="cv-meta">
+                House-Heaven is a React SPA for a guest house business. 
+                It includes apartment rental listings with details and availability, 
+                a gallery where users can like images (stored in Cloudinary, metadata in Firestore), 
+                a contact form (EmailJS), user authentication (Firebase Auth), 
+                and internationalization (i18next). Deployed on Firebase Hosting.
+              </p>
+              <div className="skills-list">
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Vite</span>
+                <span>Firebase</span>
+                <span>Tailwind CSS</span>
+                <span>i18next</span>
+                <span>Cloudinary</span>
+                <span>EmailJS</span>
+                <span>Google Maps</span>
+              </div>
+            </div>
+            <div className="cv-project-image-wrapper">
+              <a
+                href="https://heaven-guesthouse.web.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="House-Haven.png"
+                  alt="House Haven preview"
+                  className="cv-project-image"
+                />
+              </a>
+            </div>
+          </div>
 
           <div className="cv-item">
             <h4>

@@ -228,8 +228,28 @@ export default function CV() {
             </div>
           </div>
 
-          <div className="cv-item">
-            <h4>
+          {/* Weather App */}
+          <div className="cv-project-row">
+            <div className="cv-project-text">
+              <h2>Weather App</h2>
+              <p className="cv-meta">
+                Single-page weather application built with React and Vite. 
+                Includes user authentication (Firebase: email/password and Google sign-in), 
+                current weather and 15-day forecast via an external weather API, 
+                responsive UI with Tailwind CSS and Headless UI, 
+                and protected routes so weather features are available only to logged-in users.
+              </p>
+              <div className="skills-list">
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Vite</span>
+                <span>Tailwind CSS</span>
+                <span>REST APIs</span>
+                <span>Firebase</span>
+                <span>VisualCrossing</span>
+              </div>
+            </div>
+            <div className="cv-project-image-wrapper">
               <a
                 href="heaven-guesthouse.web.app"
                 target="_blank"

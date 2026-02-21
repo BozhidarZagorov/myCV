@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import MatrixCanvas from "../components/MatrixCanvas";
 
 const container = {
   hidden: {},
@@ -77,7 +78,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section section-matrix">
+      <MatrixCanvas />
       <motion.div 
         className="contact-container"
         variants={container}

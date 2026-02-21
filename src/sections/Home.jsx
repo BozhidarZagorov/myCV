@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MatrixCanvas from "../components/MatrixCanvas";
 
 const container = {
   hidden: {},
@@ -13,10 +14,11 @@ const item = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 }
 };
-
+  
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero section-matrix">
+      <MatrixCanvas />
       <motion.div
         className="hero-content"
         variants={container}

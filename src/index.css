@@ -63,6 +63,17 @@ main {
   justify-content: center;
 }
 
+.section-matrix {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-matrix .hero-content,
+.section-matrix .contact-container {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-content {
   text-align: center;
 }

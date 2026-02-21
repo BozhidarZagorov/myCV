@@ -43,17 +43,33 @@ main {
   border-radius: 8px;
   border: none;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   background: #38bdf8;
   color: #020617;
   text-decoration: none;
   display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.hero-button:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
 }
 
 .hero-button.secondary {
   background: transparent;
   border: 1px solid #38bdf8;
   color: #38bdf8;
+}
+
+.hero-button.secondary:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #0ea5e9;
+  color: #0ea5e9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
 }
 
 .hero {

@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useProjects } from "../hooks/useProjects";
+import { useOtherSkills } from "../hooks/useOtherSkills";
+import ProjectCard from "../components/ProjectCard";
 
 const container = {
   hidden: {},
@@ -24,6 +27,8 @@ const item = {
 export default function CV() {
   const skillsRef = useRef(null);
   const [visible, setVisible] = useState(false);
+  const { projects, inProgress, loading, error } = useProjects();
+  const { skills: otherSkills, loading: otherSkillsLoading, error: otherSkillsError } = useOtherSkills();
 
   
     const skills = [
@@ -100,7 +105,7 @@ export default function CV() {
           chip.removeEventListener("mouseleave", handleLeave);
         });
       };
-    }, []);
+    }, [projects, inProgress, otherSkills]);
 
 
   return (
@@ -189,218 +194,30 @@ export default function CV() {
         {/* PROJECTS */}
         <motion.div className="cv-block" variants={item}>
           <h1 className="cv-block-title">Projects</h1>
-
-          {/* House Haven */}
-          <div className="cv-project-row">
-            <div className="cv-project-text">
-              <h2>GuestHouse Haven</h2>
-              <p className="cv-meta">
-                House-Heaven is a React SPA for a guest house business. 
-                It includes apartment rental listings with details and availability, 
-                a gallery where users can like images (stored in Cloudinary, metadata in Firestore), 
-                a contact form (EmailJS), user authentication (Firebase Auth), 
-                and internationalization (i18next). Deployed on Firebase Hosting.
-              </p>
-              <div className="skills-list">
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Vite</span>
-                <span>Firebase</span>
-                <span>Tailwind CSS</span>
-                <span>i18next</span>
-                <span>Cloudinary</span>
-                <span>EmailJS</span>
-                <span>Google Maps</span>
-              </div>
-            </div>
-            <div className="cv-project-image-wrapper">
-              <a
-                href="https://heaven-guesthouse.web.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="House-Haven.png"
-                  alt="House Haven preview"
-                  className="cv-project-image"
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Weather App */}
-          <div className="cv-project-row">
-            <div className="cv-project-text">
-              <h2>Weather App</h2>
-              <p className="cv-meta">
-                Single-page weather application built with React and Vite. 
-                Includes user authentication (Firebase: email/password and Google sign-in), 
-                current weather and 15-day forecast via an external weather API, 
-                responsive UI with Tailwind CSS and Headless UI, 
-                and protected routes so weather features are available only to logged-in users.
-              </p>
-              <div className="skills-list">
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Vite</span>
-                <span>Tailwind CSS</span>
-                <span>REST APIs</span>
-                <span>Firebase</span>
-                <span>VisualCrossing</span>
-              </div>
-            </div>
-            <div className="cv-project-image-wrapper">
-              <a
-                href="https://weatherapp-863c1.web.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="weatherApp.png"
-                  alt="Weather App preview"
-                  className="cv-project-image"
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* My Home Recipes */}
-          <div className="cv-project-row">
-            <div className="cv-project-text">
-              <h2>My Home Recipes</h2>
-              <p className="cv-meta">
-                MyHomeRecipes is a single-page web app where users can browse, 
-                create, and edit recipes. It uses React and Vite on the front end, 
-                Supabase for authentication and database, and Cloudinary for recipe images. 
-                The app is deployed on Vercel and includes login/register, Google OAuth, and protected create/edit flows.
-              </p>
-              <div className="skills-list">
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Vite</span>
-                <span>Tailwind CSS</span>
-                <span>Cloudinary</span>
-                <span>Supabase</span>
-                <span>PostgreSQL</span>
-                <span>Vercel</span>
-                <span>Google Oauth</span>
-              </div>
-            </div>
-            <div className="cv-project-image-wrapper">
-              <a
-                href="https://homerecipes.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="HomeRecipes.png"
-                  alt="My Home Recipes preview"
-                  className="cv-project-image"
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* Health Mobile App */}
-          <div className="cv-project-row">
-            <div className="cv-project-text">
-              <h2>Health Mobile App</h2>
-              <p className="cv-meta">
-                Health Mobile App (Injection Tracker) — React Native/Expo app that helps users track medication injections and resupply. 
-                Features: set first injection and resupply dates; auto-generated recurring schedule (injections every 14 days, resupply every 28 days); 
-                calendar view with color-coded dots; “This Month” screen to mark items done; 
-                full history with edit/delete; scheduled reminders (day before and on the day); 
-                local data persistence (AsyncStorage); light/dark theme. Implemented with TypeScript, Expo Router, and React Navigation.
-              </p>
-              <div className="skills-list">
-                <span>TypeScript</span>
-                <span>React Native</span>
-                <span>Expo</span>
-                <span>AsyncStorage</span>
-                <span>Notifications</span>
-              </div>
-            </div>
-            <div className="cv-project-image-wrapper">
-              <a
-                href="https://github.com/BozhidarZagorov/HealthMobileApp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="HealthApp.jpg"
-                  alt="Health Mobile App preview"
-                  className="cv-project-image"
-                />
-              </a>
-            </div>
-          </div>
-
-          {/* CarsVIFI */}
-          <div className="cv-project-row">
-            <div className="cv-project-text">
-              <h2>CarsVIFI</h2>
-              <p className="cv-meta">
-                “React + Firebase web app for tracking car renewals (vignette, insurance, inspection, fire extinguisher) with email reminders, image uploads via Cloudinary, and CI/CD to Firebase Hosting.”
-              </p>
-              <div className="skills-list">
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Vite</span>
-                <span>CSS</span>
-                <span>Firebase</span>
-                <span>Google Oauth</span>
-                <span>EmailJS</span>
-                <span>Cloudinary</span>
-                <span>GitHub Actions - CI/CD</span>
-                <span>Route-Guard</span>
-              </div>
-            </div>
-            <div className="cv-project-image-wrapper">
-              <a
-                href="https://carvifi-bg.web.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="CarsVIFI.png"
-                  alt="CarsVIFI preview"
-                  className="cv-project-image"
-                />
-              </a>
-            </div>
-          </div>
+          {error && (
+            <p className="cv-meta" style={{ color: "#f87171" }}>{error}</p>
+          )}
+          {loading && (
+            <p className="cv-meta">Loading projects…</p>
+          )}
+          {!loading && !error && projects.length === 0 && (
+            <p className="cv-meta">No projects yet.</p>
+          )}
+          {!loading && projects.map((project) => (
+            <ProjectCard key={project.id} project={project} variant="full" />
+          ))}
 
         </motion.div>
 
         {/* PROJECTS IN PROGRESS */}
         <motion.div className="cv-block" variants={item}>
           <h1 className="cv-block-title">Projects in Progress</h1>
-
-          <div className="cv-item">
-            <h2><a
-                href="https://github.com/BozhidarZagorov/Subscription-System"
-                target="_blank"
-                rel="noopener noreferrer"
-              >subscription-system</a></h2>
-            <p className="cv-meta">
-                Subscription Billing System — A full-stack SaaS-style application for managing subscriptions, 
-                invoices, and payments. Built with a React frontend (dashboard with MRR, churn rate, 
-                revenue-by-plan charts, and active subscriptions), a Node.js/Express REST API, 
-                and a PostgreSQL backend with normalized schema, constraints, triggers, and analytics queries. 
-                Demonstrates end-to-end design from UI to database.
-              </p>
-            <div className="skills-list">
-              <span>JavaScript</span>
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>RESTful APIs</span>
-              <span>PostgreSQL</span>
-              <span>React</span>
-              <span>Vite</span>
-              <span>Recharts</span>
-              <span>Axios</span>
-            </div>
-          </div>
+          {!loading && inProgress.length === 0 && (
+            <p className="cv-meta">No projects in progress.</p>
+          )}
+          {inProgress.map((project) => (
+            <ProjectCard key={project.id} project={project} variant="compact" />
+          ))}
         </motion.div>
 
 
@@ -567,28 +384,19 @@ export default function CV() {
          {/* SKILLS */}
         <motion.div className="cv-block" variants={item}>
           <h3 className="cv-block-title">Other Skills</h3>
-
+          {otherSkillsError && (
+            <p className="cv-meta" style={{ color: "#f87171" }}>{otherSkillsError}</p>
+          )}
+          {otherSkillsLoading && (
+            <p className="cv-meta">Loading skills…</p>
+          )}
+          {!otherSkillsLoading && otherSkills.length === 0 && !otherSkillsError && (
+            <p className="cv-meta">No skills listed</p>
+          )}
           <div className="skills-list">
-            <span>Vite</span>
-            <span>Postman</span>
-            <span>Supabase</span>
-            <span>Vercel</span>
-            <span>Cloudinary</span>
-            <span>Azure</span>
-            <span>nginx</span>
-            <span>Grafana</span>
-            <span>Alertmanager</span>
-            <span>Blackbox</span>
-            <span>react-i18next</span>
-            <span>EmailJS</span>
-            <span>Expo</span>
-            <span>Async Storage</span>
-            <span>Express</span>
-            <span>Recharts</span>
-            <span>PostgreSQL</span>
-            <span>Python</span>
-            <span>C++</span>
-            <span>C#</span>
+            {otherSkills.map((s) => (
+              <span key={s.id}>{s.name}</span>
+            ))}
           </div>
         </motion.div>
 

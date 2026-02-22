@@ -126,18 +126,19 @@ export default function CV() {
           <h3 className="cv-block-title">About Me</h3>
         <div className="cv-row">
         <div>
-          <p className="cv-about-text">
+          <p>
             Full-Stack JavaScript developer with a strong analytical mindset and a passion
             for building scalable web applications. My background in competitive chess,
-            National-level competition in linguistics, and mathematics competitions, fishing and woorworking has strengthened
-            my strategic thinking and structured problem-solving skills.
+            National-level competition in linguistics, and mathematics competitions has strengthened
+            my strategic thinking and structured problem-solving skills. I also led a NASA Modeling Project
+            in 2019–2020, which allowed me to apply these skills to complex, 
+            real-world challenges in a collaborative team setting.
           </p>
           <div className="cv-tags">
             <span>♟ FIDE Rated Chess Player (~1800 inactive)</span>
             <span>🗣️ Participant in National-level Linguistics competition </span>
             <span>📐 Mathematics Competition Experience</span>
-            <span>🎣 Fishing</span>
-            <span>🪵 Woodworking</span>
+            <span>🚀 NASA Modeling Project (Team Lead)</span>
           </div>
         </div>
           <div className="cv-image">
@@ -162,7 +163,29 @@ export default function CV() {
               </a>
           </div>
         </div>
-          
+        <div>
+            <div>
+              <h3 className="cv-block-title">Hobbies & Interests</h3>
+
+              <p>
+                I enjoy activities that combine creativity, strategy, and problem-solving. 
+                Fishing and woodworking help me stay focused and detail-oriented, 
+                while meaningful music with strong storytelling inspires me. 
+                Strategic and MMO games enhance my analytical thinking, 
+                and I’m often curious about how game mechanics work
+                 — especially when analyzing bugs or exploring modding.
+              </p>
+
+              <div className="cv-tags">
+                <span>🎣 Fishing</span>
+                <span>🪵 Woodworking</span>
+                <span>🎵 Music (Favorite <strong>Queen</strong>)</span>
+                <span>📝 Meaningful Lyrics</span>
+                <span>🎮 Strategy & MMO Games</span>
+                <span>🛠 Game Modding</span>
+              </div>
+            </div>
+        </div>
 
         </motion.div>
 

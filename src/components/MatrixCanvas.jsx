@@ -14,7 +14,7 @@ export default function MatrixCanvas() {
     const ctx = canvas.getContext("2d");
     let animationId;
     let columns = [];
-    const fontSize = 8;
+    const fontSize = 10;
     const columnCount = Math.floor(window.innerWidth / fontSize);
 
     function resize() {
@@ -43,7 +43,7 @@ export default function MatrixCanvas() {
         if (y > canvas.height && Math.random() > 0.975) {
           columns[i] = 0;
         } else {
-          columns[i] += 0.35;
+          columns[i] += 0.25;
         }
       }
       animationId = requestAnimationFrame(draw);

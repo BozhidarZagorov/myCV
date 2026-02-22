@@ -47,7 +47,7 @@ export default function MatrixCanvas() {
     function draw() {
       ctx.fillStyle = "rgba(3, 17, 40, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = GREEN;
+      // ctx.fillStyle = GREEN;
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < columns.length; i++) {

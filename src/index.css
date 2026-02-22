@@ -10,7 +10,7 @@ html {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #08132b;
+  background: #030c1c;
   color: #e5e7ebdc;
 }
 
@@ -113,8 +113,16 @@ main {
   color: #94a3b8;
 }
 
+.cv-page {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 4rem;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgb(32, 143, 7), 0 25px 50px -12px rgb(7, 215, 18);
+}
+
 .cv-section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem 6rem;
   background: #0b1220;
 }
 

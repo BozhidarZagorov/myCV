@@ -109,7 +109,7 @@ export default function CV() {
 
 
   return (
-    <section id="cv" className="cv-section">
+    <section id="cv" className="cv-section cv-page">
       <motion.div 
         className="cv-container"
         variants={container}

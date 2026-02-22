@@ -1,13 +1,31 @@
 import { useEffect, useRef } from "react";
 
 const MATRIX_CHARS = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF";
-const GREEN = "#00ff41";
-const DARK_GREEN = "#003b00";
+// const GREEN = "#00ff41";
+// const DARK_GREEN = "#003b00";
+const THEMES = [
+  {
+    primary: "#00ff41",   
+    secondary: "#003b00"  
+  },
+  {
+    primary: "#38bdf8",   
+    secondary: "#1e3a8a" 
+  },
+  {
+    primary: "#fd0000",
+    secondary: "#ffd209"
+  }
+];
 
 export default function MatrixCanvas() {
   const canvasRef = useRef(null);
+  
 
   useEffect(() => {
+    let currentTheme = 0;
+    let frameCounter = 0;
+    const switchThreshold = 600;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -36,15 +54,23 @@ export default function MatrixCanvas() {
         const char = MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
         const x = i * fontSize;
         const y = columns[i] * fontSize;
-        ctx.fillStyle = DARK_GREEN;
+        // ctx.fillStyle = DARK_GREEN;
+        ctx.fillStyle = THEMES[currentTheme].secondary;
         ctx.fillText(char, x, y);
-        ctx.fillStyle = GREEN;
+        // ctx.fillStyle = GREEN;
+        ctx.fillStyle = THEMES[currentTheme].primary;
         ctx.fillText(char, x, y - fontSize);
         if (y > canvas.height && Math.random() > 0.975) {
           columns[i] = 0;
         } else {
           columns[i] += 0.25;
         }
+      }
+      frameCounter++;
+
+      if (frameCounter > switchThreshold) {
+        currentTheme = (currentTheme + 1) % THEMES.length;
+        frameCounter = 0;
       }
       animationId = requestAnimationFrame(draw);
     }

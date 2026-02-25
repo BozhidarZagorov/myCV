@@ -142,7 +142,7 @@ export default function CV() {
           </div>
         </div>
           <div className="cv-image">
-              <img src="/profilepic.jpg" alt="Your Name" />
+              <img src="/profilepic.png" alt="Your Name" />
               <a
                 href="https://github.com/BozhidarZagorov"
                 target="_blank"
@@ -168,12 +168,11 @@ export default function CV() {
               <h3 className="cv-block-title">Hobbies & Interests</h3>
 
               <p>
-                I enjoy activities that combine creativity, strategy, and problem-solving. 
-                Fishing and woodworking help me stay focused and detail-oriented, 
-                while meaningful music with strong storytelling inspires me. 
-                Strategic and MMO games enhance my analytical thinking, 
-                and I’m often curious about how game mechanics work
-                 — especially when analyzing bugs or exploring modding.
+                I’m drawn to activities that blend creativity, strategy, and problem-solving.
+                Fishing and woodworking cultivate patience and precision, 
+                while exploring game modding sharpens my technical creativity and 
+                understanding of complex systems. Story-driven music fuels focus and 
+                inspiration.
               </p>
 
               <div className="cv-tags">
@@ -181,7 +180,6 @@ export default function CV() {
                 <span>🪵 Woodworking</span>
                 <span>🎵 Music (Favorite <strong>Queen</strong>)</span>
                 <span>📝 Meaningful Lyrics</span>
-                <span>🎮 Strategy & MMO Games</span>
                 <span>🛠 Game Modding</span>
               </div>
             </div>

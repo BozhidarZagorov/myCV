@@ -46,4 +46,4 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BOZHIDARZAGOROVCV }}"
           channelId: live
-          projectId: echo "VITE_FIREBASE_PROJECT_ID=${{ secrets.VITE_FIREBASE_PROJECT_ID }}" >> .env
+          projectId: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}

@@ -93,7 +93,7 @@ export default function Contact() {
         
         <motion.div className="contact-info" variants={item}>
           <a 
-            href={`tel:${import.meta.env.VITE_PHONE_NUMBER || "+1234567890"}`} 
+            href={`tel:${import.meta.env.VITE_PHONE_NUMBER || "+359"}`} 
             className="phone-number"
             onClick={(e) => {
               // Only allow tel: links on mobile devices

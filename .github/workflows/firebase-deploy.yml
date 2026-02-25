@@ -27,8 +27,8 @@ jobs:
           echo "VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}" >> .env
           echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" >> .env
 
-          echo "VITE_YOUR_EMAIL"=${{ secrets.VITE_YOUR_EMAIL }}" >> .env
-          echo "VITE_PHONE_NUMBER"=${{ secrets.VITE_PHONE_NUMBER }}" >> .env
+          echo "VITE_YOUR_EMAIL=${{ secrets.VITE_YOUR_EMAIL }}" >> .env
+          echo "VITE_PHONE_NUMBER=${{ secrets.VITE_PHONE_NUMBER }}" >> .env
 
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env
           echo "VITE_FIREBASE_AUTH_DOMAIN=${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}" >> .env

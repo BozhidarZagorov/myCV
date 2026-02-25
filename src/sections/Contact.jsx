@@ -88,7 +88,7 @@ export default function Contact() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2 className="contact-title" variants={item}>
-          Contact
+          Contacts
         </motion.h2>
         
         <motion.div className="contact-info" variants={item}>
@@ -102,7 +102,7 @@ export default function Contact() {
               }
             }}
           >
-            {import.meta.env.VITE_PHONE_NUMBER || "+1 (234) 567-8900"}
+            {import.meta.env.VITE_PHONE_NUMBER || "+359"}
           </a>
           <p className="contact-subtitle">or send me an email</p>
         </motion.div>

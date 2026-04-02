@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+
 import { useProjects } from "../hooks/useProjects";
 import { useOtherSkills } from "../hooks/useOtherSkills";
 import ProjectCard from "../components/ProjectCard";
+
+import html2pdf from "html2pdf.js";
 
 const container = {
   hidden: {},
@@ -18,38 +21,40 @@ const item = {
   show: { 
     opacity: 1, 
     y: 0,
-    transition: {
-      duration: 0.5
-    }
+    transition: { duration: 0.5 }
   }
 };
 
 export default function CV() {
   const skillsRef = useRef(null);
-  const [visible, setVisible] = useState(false);
-  const { projects, inProgress, loading, error } = useProjects();
-  const { skills: otherSkills, loading: otherSkillsLoading, error: otherSkillsError } = useOtherSkills();
+  const cvRef = useRef(null);
 
-  
-    const skills = [
-      { name: "JavaScript", level: 90},
-      { name: "React", level: 85},
-      { name: "Firebase", level: 80},
-      { name: "Node.js", level: 75},
-      { name: "TypeScript", level: 75},
-      { name: "Tailwind CSS", level: 80},
-      { name: "CSS", level: 75},
-      { name: "React Native", level: 78},
-      { name: "HTML", level: 75},
-      { name: "Docker", level: 75},
-      { name: "Git", level: 79},
-      { name: "GitHub Actions & Projects", level: 80},
-      { name: "Terraform", level: 78}
-    ];
+  const [visible, setVisible] = useState(false);
+  const [isPDF, setIsPDF] = useState(false);
+
+  const { projects, inProgress, loading, error } = useProjects();
+  const { skills: otherSkills, loading: otherSkillsLoading, error: otherSkillsError} = useOtherSkills();
+
+  const skills = [
+    { name: "JavaScript", level: 90},
+    { name: "React", level: 85},
+    { name: "Firebase", level: 80},
+    { name: "Node.js", level: 75},
+    { name: "TypeScript", level: 75},
+    { name: "Tailwind CSS", level: 80},
+    { name: "CSS", level: 75},
+    { name: "React Native", level: 78},
+    { name: "HTML", level: 75},
+    { name: "Docker", level: 75},
+    { name: "Git", level: 79},
+    { name: "Terraform", level: 78}
+  ];
 
   const sortedSkills = [...skills].sort((a, b) => b.level - a.level);
 
-    useEffect(() => {
+
+  
+ useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -98,8 +103,7 @@ export default function CV() {
         chip.addEventListener("mouseenter", handleEnter);
         chip.addEventListener("mouseleave", handleLeave);
       });
-
-      return () => {
+          return () => {
         chips.forEach((chip) => {
           chip.removeEventListener("mouseenter", handleEnter);
           chip.removeEventListener("mouseleave", handleLeave);
@@ -107,9 +111,93 @@ export default function CV() {
       };
     }, [projects, inProgress, otherSkills]);
 
+  // pdf download
+  const downloadPDF = () => {
+    if (loading || otherSkillsLoading) {
+      alert("Wait for data to load");
+      return;
+    }
+
+    setIsPDF(true);
+
+    setTimeout(() => {
+      html2pdf().from(cvRef.current).save().then(() => {
+        setIsPDF(false);
+      });
+    }, 300);
+  };
 
   return (
-    <section id="cv" className="cv-section cv-page">
+    <section className="cv-section">
+
+      {/* BUTTON */}
+      {!isPDF && (
+        <button onClick={downloadPDF} className="download-btn">
+          Download PDF
+        </button>
+      )}
+
+      {/* ================= PDF VERSION ================= */}
+      {isPDF ? (
+        <div ref={cvRef} className="pdf-cv">
+
+          {/* LEFT */}
+          <div className="pdf-left">
+            <img src="/profilepic.png" className="pdf-avatar" />
+
+            <h1>Bozhidar Zagorov</h1>
+            <h2>Full-Stack Developer</h2>
+
+            <div className="pdf-section">
+              <h3>Skills</h3>
+              {sortedSkills.slice(0, 12).map(s => (
+                <p key={s.name}>{s.name}</p>
+              ))}
+            </div>
+
+            <div className="pdf-section">
+              <h3>Other Skills</h3>
+              {otherSkills.slice(0, 20).map(s => (
+                <p key={s.id}>{s.name}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <div className="pdf-right">
+            <div className="pdf-section">
+              <h3>Profile</h3>
+              <p>
+                Full-Stack developer focused on scalable apps, React,
+                Firebase, and modern architectures.
+              </p>
+            </div>
+
+            <div className="pdf-section">
+              <h3>Experience</h3>
+              <p><strong>Full-Stack JavaScript Dev</strong> (since late 2025)</p>
+              <p><strong>JavaScript Dev</strong> (since early 2024)</p>
+              <p>React SPA apps, mobile apps, backend systems</p>
+            </div>
+
+            <div className="pdf-section">
+              <h3>Projects</h3>
+              {projects.slice(0, 6).map(p => (
+                <p key={p.id}>{p.title}</p>
+              ))}
+            </div>
+
+            <div className="pdf-section">
+              <h3>Education</h3>
+              <p>Sofia University (2020-2022)</p>
+              <p>Mathematics High School (2012-2020)</p>
+            </div>
+          </div>
+
+        </div>
+      ) : (
+
+      <section id="cv" className="cv-section cv-page">
       <motion.div 
         className="cv-container"
         variants={container}
@@ -423,6 +511,9 @@ export default function CV() {
 
 
       </motion.div>
+    </section>
+      )}
+
     </section>
   );
 }

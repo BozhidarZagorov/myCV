@@ -122,7 +122,6 @@ main {
 }
 
 .cv-section {
-  padding: 4rem 2rem 6rem;
   background: #0b1220;
 }
 
@@ -376,6 +375,43 @@ main {
   cursor: default;
   pointer-events: none;
 }
+
+.pdf-cv {
+  display: flex;
+  width: 100%;
+  font-family: Arial;
+  height: 1121px;
+}
+
+.pdf-left {
+  width: 35%;
+  background: #0e121d;
+  color: white;
+  padding: 20px;
+}
+
+.pdf-right {
+  width: 65%;
+  padding: 20px;
+  color: #000000;
+}
+
+.pdf-avatar {
+  width: 200px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.pdf-section {
+  margin-bottom: 15px;
+}
+
+.pdf-section h3 {
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+}
+
 
 /* Enable clickability only on mobile devices */
 @media (max-width: 768px) {

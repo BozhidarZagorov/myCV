@@ -170,12 +170,11 @@ export default function CV() {
 
           {/* RIGHT */}
           <div className="pdf-right">
-            <div className="pdf-section">
-              <h3>Profile</h3>
-              <p>
-                Full-Stack developer focused on scalable apps, React,
-                Firebase, and modern architectures.
-              </p>
+            <div className="pdf-section-main">
+              <h3>About me</h3>
+                <p>Full-Stack JavaScript developer focused on building scalable web applications with React and modern technologies.</p>
+                <p>Strong analytical background from competitive chess, linguistics, and mathematics, enabling structured problem-solving and strategic thinking.</p>
+                <p>Led a NASA Modeling Project (2019–2020), applying these skills to real-world challenges in a collaborative environment.</p>
             </div>
 
             <div className="pdf-section">

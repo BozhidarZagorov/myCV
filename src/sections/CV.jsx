@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 import { useProjects } from "../hooks/useProjects";
 import { useOtherSkills } from "../hooks/useOtherSkills";
-import ProjectCard from "../components/ProjectCard";
-
 import html2pdf from "html2pdf.js";
+import ProjectCard from "../components/ProjectCard";
+import PdfCV from "../components/PdfCV";
 
 const container = {
   hidden: {},
@@ -25,12 +25,11 @@ const item = {
   }
 };
 
-export default function CV() {
+export default function CV({ onDownloadReady }) {
   const skillsRef = useRef(null);
-  const cvRef = useRef(null);
+  const pdfRef = useRef();
 
   const [visible, setVisible] = useState(false);
-  const [isPDF, setIsPDF] = useState(false);
 
   const { projects, inProgress, loading, error } = useProjects();
   const { skills: otherSkills, loading: otherSkillsLoading, error: otherSkillsError} = useOtherSkills();
@@ -112,98 +111,37 @@ export default function CV() {
     }, [projects, inProgress, otherSkills]);
 
   // pdf download
-  const downloadPDF = () => {
-    if (loading || otherSkillsLoading) {
-      alert("Wait for data to load");
-      return;
-    }
+    const downloadPDF = () => {
+     if (loading || otherSkillsLoading) {
+       alert("Wait for data");
+       return;
+     }
+   
+     html2pdf().from(pdfRef.current).save();
+    };
 
-    setIsPDF(true);
-
-    setTimeout(() => {
-      html2pdf().from(cvRef.current).save().then(() => {
-        setIsPDF(false);
-      });
-    }, 300);
-  };
-
+useEffect(() => {
+  if (onDownloadReady) {
+    onDownloadReady(() => downloadPDF);
+  }
+}, [projects, otherSkills]);
   return (
+    
     <section className="cv-section">
-
-      {/* BUTTON */}
+      <div style={{ position: "absolute", left: "-9999px", top: 0 }}>
+        <PdfCV
+          ref={pdfRef}
+          projects={projects}
+          otherSkills={otherSkills}
+          sortedSkills={sortedSkills}
+        />
+      </div>
+      {/* BUTTON
       {!isPDF && (
         <button onClick={downloadPDF} className="download-btn">
           Download PDF
         </button>
-      )}
-
-      {/* PDF VERSION */}
-      {isPDF ? (
-        <div ref={cvRef} className="pdf-cv">
-
-          {/* LEFT */}
-          <div className="pdf-left">
-            <img src="/profilepic.png" className="pdf-avatar" />
-
-            <h1>Bozhidar Zagorov</h1>
-            <h2>Full-Stack Developer</h2>
-
-            <div className="pdf-section">
-              <h3>Main Skills</h3>
-              {sortedSkills.slice(0, 12).map(s => (
-                <p key={s.name}>{s.name}</p>
-              ))}
-            </div>
-
-            <div className="pdf-section">
-              <h3>Other Skills</h3>
-              {otherSkills.slice(0, 20).map(s => (
-                <p key={s.id}>{s.name}</p>
-              ))}
-            </div>
-            <div className="pdf-section">
-                <h3>Contact Details</h3>
-                <p>phone number: 088 654 8334</p>
-                <p>e-mail: bozhidarzagorov@gmail.com</p>
-            </div>
-          </div>
-
-          {/* RIGHT */}
-          <div className="pdf-right">
-            <div className="pdf-section-main">
-              <h3>About me</h3>
-                <p>Full-Stack JavaScript developer focused on building scalable web applications with React and modern technologies.</p>
-                <p>Strong analytical background from competitive chess, linguistics, and mathematics, enabling structured problem-solving and strategic thinking.</p>
-                <p>Led a NASA Modeling Project (2019–2020), applying these skills to real-world challenges in a collaborative environment.</p>
-            </div>
-
-            <div className="pdf-section">
-              <h3>Experience</h3>
-              <p><strong>Full-Stack JavaScript Dev</strong> (since late 2025)</p>
-              <p><strong>JavaScript Dev</strong> (since early 2024)</p>
-              <p>React SPA apps, mobile apps, backend systems</p>
-            </div>
-
-            <div className="pdf-section">
-              <h3>Projects</h3>
-              {projects.slice(0, 6).map(p => (
-                <li>
-                  <a href={p.link} target="_blank" rel="noopener noreferrer"><p key={p.id}>{p.title}</p></a>
-                  <ul>{p.skills.join(" | ")}</ul>
-                </li>
-              ))}
-            </div>
-
-            <div className="pdf-section">
-              <h3>Education</h3>
-              <p>SoftUni - Software University (early 2023 - late 2025)</p>
-              <p>Sofia University FMI (2020-2022)</p>
-              <p>High School of Natural Sciences & Mathematics "Ivan Vazov" (2012-2020)</p>
-            </div>
-          </div>
-
-        </div>
-      ) : (
+      )} */}
 
       <section id="cv" className="cv-section cv-page">
       <motion.div 
@@ -520,7 +458,6 @@ export default function CV() {
 
       </motion.div>
     </section>
-      )}
 
     </section>
   );

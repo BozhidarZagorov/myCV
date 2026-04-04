@@ -416,6 +416,17 @@ main {
   margin-bottom: 10px;
 }
 
+.pdf-section-main {
+  margin-bottom: 45px;
+}
+.pdf-section-main h3 {
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+  margin-bottom: 5px;
+}
+.pdf-section-main p {
+  margin-bottom: 10px;
+}
 
 /* Enable clickability only on mobile devices */
 @media (max-width: 768px) {

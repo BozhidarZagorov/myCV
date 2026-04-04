@@ -194,8 +194,9 @@ export default function CV() {
 
             <div className="pdf-section">
               <h3>Education</h3>
-              <p>Sofia University (2020-2022)</p>
-              <p>Mathematics High School (2012-2020)</p>
+              <p>SoftUni - Software University (early 2023 - late 2025)</p>
+              <p>Sofia University FMI (2020-2022)</p>
+              <p>High School of Natural Sciences & Mathematics "Ivan Vazov" (2012-2020)</p>
             </div>
           </div>
 

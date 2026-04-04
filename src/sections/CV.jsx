@@ -137,7 +137,7 @@ export default function CV() {
         </button>
       )}
 
-      {/* ================= PDF VERSION ================= */}
+      {/* PDF VERSION */}
       {isPDF ? (
         <div ref={cvRef} className="pdf-cv">
 
@@ -149,7 +149,7 @@ export default function CV() {
             <h2>Full-Stack Developer</h2>
 
             <div className="pdf-section">
-              <h3>Skills</h3>
+              <h3>Main Skills</h3>
               {sortedSkills.slice(0, 12).map(s => (
                 <p key={s.name}>{s.name}</p>
               ))}

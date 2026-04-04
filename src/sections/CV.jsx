@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+
 import { useProjects } from "../hooks/useProjects";
 import { useOtherSkills } from "../hooks/useOtherSkills";
+import html2pdf from "html2pdf.js";
 import ProjectCard from "../components/ProjectCard";
+import PdfCV from "../components/PdfCV";
 
 const container = {
   hidden: {},
@@ -18,38 +21,39 @@ const item = {
   show: { 
     opacity: 1, 
     y: 0,
-    transition: {
-      duration: 0.5
-    }
+    transition: { duration: 0.5 }
   }
 };
 
-export default function CV() {
+export default function CV({ onDownloadReady }) {
   const skillsRef = useRef(null);
-  const [visible, setVisible] = useState(false);
-  const { projects, inProgress, loading, error } = useProjects();
-  const { skills: otherSkills, loading: otherSkillsLoading, error: otherSkillsError } = useOtherSkills();
+  const pdfRef = useRef();
 
-  
-    const skills = [
-      { name: "JavaScript", level: 90},
-      { name: "React", level: 85},
-      { name: "Firebase", level: 80},
-      { name: "Node.js", level: 75},
-      { name: "TypeScript", level: 75},
-      { name: "Tailwind CSS", level: 80},
-      { name: "CSS", level: 75},
-      { name: "React Native", level: 78},
-      { name: "HTML", level: 75},
-      { name: "Docker", level: 75},
-      { name: "Git", level: 79},
-      { name: "GitHub Actions & Projects", level: 80},
-      { name: "Terraform", level: 78}
-    ];
+  const [visible, setVisible] = useState(false);
+
+  const { projects, inProgress, loading, error } = useProjects();
+  const { skills: otherSkills, loading: otherSkillsLoading, error: otherSkillsError} = useOtherSkills();
+
+  const skills = [
+    { name: "JavaScript", level: 90},
+    { name: "React", level: 85},
+    { name: "Firebase", level: 80},
+    { name: "Node.js", level: 75},
+    { name: "TypeScript", level: 75},
+    { name: "Tailwind CSS", level: 80},
+    { name: "CSS", level: 75},
+    { name: "React Native", level: 78},
+    { name: "HTML", level: 75},
+    { name: "Docker", level: 75},
+    { name: "Git", level: 79},
+    { name: "Terraform", level: 78}
+  ];
 
   const sortedSkills = [...skills].sort((a, b) => b.level - a.level);
 
-    useEffect(() => {
+
+  
+ useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -98,8 +102,7 @@ export default function CV() {
         chip.addEventListener("mouseenter", handleEnter);
         chip.addEventListener("mouseleave", handleLeave);
       });
-
-      return () => {
+          return () => {
         chips.forEach((chip) => {
           chip.removeEventListener("mouseenter", handleEnter);
           chip.removeEventListener("mouseleave", handleLeave);
@@ -107,9 +110,40 @@ export default function CV() {
       };
     }, [projects, inProgress, otherSkills]);
 
+  // pdf download
+    const downloadPDF = () => {
+     if (loading || otherSkillsLoading) {
+       alert("Wait for data");
+       return;
+     }
+   
+     html2pdf().from(pdfRef.current).save();
+    };
 
+useEffect(() => {
+  if (onDownloadReady) {
+    onDownloadReady(() => downloadPDF);
+  }
+}, [projects, otherSkills]);
   return (
-    <section id="cv" className="cv-section cv-page">
+    
+    <section className="cv-section">
+      <div style={{ position: "absolute", left: "-9999px", top: 0 }}>
+        <PdfCV
+          ref={pdfRef}
+          projects={projects}
+          otherSkills={otherSkills}
+          sortedSkills={sortedSkills}
+        />
+      </div>
+      {/* BUTTON
+      {!isPDF && (
+        <button onClick={downloadPDF} className="download-btn">
+          Download PDF
+        </button>
+      )} */}
+
+      <section id="cv" className="cv-section cv-page">
       <motion.div 
         className="cv-container"
         variants={container}
@@ -423,6 +457,8 @@ export default function CV() {
 
 
       </motion.div>
+    </section>
+
     </section>
   );
 }

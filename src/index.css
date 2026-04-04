@@ -59,12 +59,32 @@ main {
 }
 
 .hero-button.secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #16a8e6e9;
+  color: #020617;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.hero-button.secondary:hover {
+  background: #0b7cb0d0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.hero-button.third {
   background: transparent;
   border: 1px solid #38bdf8;
   color: #38bdf8;
 }
 
-.hero-button.secondary:hover {
+.hero-button.third:hover {
   background: rgba(56, 189, 248, 0.15);
   border-color: #0ea5e9;
   color: #0ea5e9;
@@ -122,7 +142,6 @@ main {
 }
 
 .cv-section {
-  padding: 4rem 2rem 6rem;
   background: #0b1220;
 }
 
@@ -375,6 +394,58 @@ main {
   transition: color 0.2s ease;
   cursor: default;
   pointer-events: none;
+}
+
+.pdf-cv {
+  display: flex;
+  width: 100%;
+  font-family: Arial;
+  height: 1122px;
+}
+
+.pdf-left {
+  width: 40%;
+  background: #0e121d;
+  color: white;
+  padding: 20px;
+}
+
+.pdf-right {
+  width: 60%;
+  padding: 20px;
+  color: #000000;
+}
+
+.pdf-avatar {
+  width: 200px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.pdf-section {
+  margin-bottom: 45px;
+}
+
+.pdf-section h3 {
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+  margin-bottom: 5px;
+}
+.pdf-section ul {
+  margin-bottom: 10px;
+}
+
+.pdf-section-main {
+  margin-bottom: 45px;
+}
+.pdf-section-main h3 {
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+  margin-bottom: 5px;
+}
+.pdf-section-main p {
+  margin-bottom: 10px;
 }
 
 /* Enable clickability only on mobile devices */

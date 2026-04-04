@@ -15,7 +15,7 @@ const item = {
   show: { opacity: 1, y: 0 }
 };
   
-export default function Hero() {
+export default function Home({ onDownloadCV }) {
   return (
     <section className="hero section-matrix">
       <MatrixCanvas />
@@ -43,7 +43,14 @@ export default function Hero() {
 
         <motion.div className="hero-actions" variants={item}>
           <a href="#cv" className="hero-button">View CV</a>
-          <a href="#contact" className="hero-button secondary">Contact Me</a>
+          <button onClick={onDownloadCV} className="hero-button secondary">
+            Download CV
+          </button>
+          <a href="#contact" className="hero-button third">Contact Me</a>
+        </motion.div>
+        <motion.div className="hero-actions" variants={item}>
+
+          
         </motion.div>
       </motion.div>
     </section>

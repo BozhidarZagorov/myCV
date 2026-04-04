@@ -161,6 +161,11 @@ export default function CV() {
                 <p key={s.id}>{s.name}</p>
               ))}
             </div>
+            <div className="pdf-section">
+                <h3>Contact Details</h3>
+                <p>phone number: 088 654 8334</p>
+                <p>e-mail: bozhidarzagorov@gmail.com</p>
+            </div>
           </div>
 
           {/* RIGHT */}

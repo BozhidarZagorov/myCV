@@ -384,14 +384,14 @@ main {
 }
 
 .pdf-left {
-  width: 35%;
+  width: 40%;
   background: #0e121d;
   color: white;
   padding: 20px;
 }
 
 .pdf-right {
-  width: 65%;
+  width: 60%;
   padding: 20px;
   color: #000000;
 }

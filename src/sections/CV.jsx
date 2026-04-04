@@ -188,7 +188,10 @@ export default function CV() {
             <div className="pdf-section">
               <h3>Projects</h3>
               {projects.slice(0, 6).map(p => (
-                <p key={p.id}>{p.title}</p>
+                <li>
+                  <a href={p.link} target="_blank" rel="noopener noreferrer"><p key={p.id}>{p.title}</p></a>
+                  <ul>{p.skills.join(" | ")}</ul>
+                </li>
               ))}
             </div>
 

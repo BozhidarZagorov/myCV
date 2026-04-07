@@ -50,7 +50,7 @@ const PdfCV = React.forwardRef(({ projects = [], otherSkills = [], sortedSkills 
             <div className="pdf-section">
               <h3>Projects</h3>
                 <ul>
-                    {projects?.slice(0, 6).map(p => (
+                    {projects?.slice(0, 7).map(p => (
                         <li key={p.id}>
                         <a href={p.link} target="_blank" rel="noopener noreferrer">
                           <p>{p.title}</p>

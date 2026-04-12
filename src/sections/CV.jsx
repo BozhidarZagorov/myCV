@@ -117,8 +117,13 @@ export default function CV({ onDownloadReady }) {
        return;
      }
    
-     html2pdf().from(pdfRef.current).save();
+     html2pdf().set({
+        filename: "Bozhidar_Zagorov_CV.pdf",
+      })
+        .from(pdfRef.current)
+        .save();
     };
+    
 
 useEffect(() => {
   if (onDownloadReady) {

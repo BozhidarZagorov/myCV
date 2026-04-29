@@ -46,7 +46,10 @@ export default function Home({ onDownloadCV }) {
           <button onClick={onDownloadCV} className="hero-button secondary">
             Download CV
           </button>
-          <a href="#contact" className="hero-button third">Contact Me</a>
+          
+        </motion.div>
+        <motion.div className="hero-actionsme" variants={item}>
+        <a href="#contact" className="hero-button third">Contact Me</a>
         </motion.div>
         <motion.div className="hero-actions" variants={item}>
 

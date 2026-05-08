@@ -474,8 +474,6 @@ main {
 
 
 .mobile-pdf {
-  transform: scale(0.92);
-  transform-origin: top left;
   font-size: 14px;
   line-height: 1.2;
 }

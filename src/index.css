@@ -474,12 +474,12 @@ main {
 
 
 .mobile-pdf {
-  font-size: 10px;
-  line-height: 0.8;
+  font-size: 12px;
+  line-height: 1.1;
 }
 
 .mobile-pdf .pdf-avatar {
-  width: 50px;
+  width: 110px;
 }
 
 .mobile-pdf .pdf-section {

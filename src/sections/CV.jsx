@@ -151,7 +151,22 @@ useEffect(() => {
   return (
     
     <section className="cv-section">
-      <div style={{ position: "absolute", left: "-10000px", width: "794px", height: "1122px", top: 0 }}>
+      <div style={{ 
+                    // position: "absolute", 
+                    left: "-10000px", 
+                    width: "794px", 
+                    height: "1122px", 
+                    top: 0,
+
+                    position: "fixed",
+
+                    minWidth: "794px",
+                    maxWidth: "794px",
+
+                    overflow: "hidden",
+
+                    background: "white",
+                  }}>
         <PdfCV
           ref={pdfRef}
           projects={projects}

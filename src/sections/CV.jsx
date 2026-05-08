@@ -118,7 +118,25 @@ export default function CV({ onDownloadReady }) {
      }
    
      html2pdf().set({
+        margin: 0,
         filename: "Bozhidar_Zagorov_CV.pdf",
+
+        image: {
+          type: "jpeg",
+          quality: 1
+        },
+
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          letterRendering: true
+        },
+
+        jsPDF: {
+          unit: "mm",
+          format: "a4",
+          orientation: "portrait"
+        }
       })
         .from(pdfRef.current)
         .save();
@@ -133,7 +151,7 @@ useEffect(() => {
   return (
     
     <section className="cv-section">
-      <div style={{ position: "absolute", left: "-9999px", top: 0 }}>
+      <div style={{ position: "absolute", left: "-10000px", width: "794px", height: "1122px", top: 0 }}>
         <PdfCV
           ref={pdfRef}
           projects={projects}

@@ -184,12 +184,18 @@ useEffect(() => {
         <div className="cv-row">
         <div>
           <p>
-            Full-Stack JavaScript developer with a strong analytical mindset and a passion
+            {/* Full-Stack JavaScript developer with a strong analytical mindset and a passion
             for building scalable web applications. My background in competitive chess,
             National-level competition in linguistics, and mathematics competitions has strengthened
             my strategic thinking and structured problem-solving skills. I also led a NASA Modeling Project
             in 2019–2020, which allowed me to apply these skills to complex, 
-            real-world challenges in a collaborative team setting.
+            real-world challenges in a collaborative team setting. */}
+            Full-Stack JavaScript developer with a strong analytical mindset and a passion
+            for building scalable web applications. I led a NASA Modeling Project in 2019–2020,
+            where I applied analytical thinking and collaborative problem-solving to complex,
+            real-world challenges. My background in competitive chess, National-level
+            competition in linguistics, and mathematics competitions has further strengthened
+            my strategic thinking and structured approach to problem-solving.
           </p>
           <div className="cv-tags">
             <span>♟ FIDE Rated Chess Player (~1800 inactive)</span>

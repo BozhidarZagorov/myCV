@@ -414,9 +414,6 @@ main {
 
   overflow: hidden;
   box-sizing: border-box;
-
-  font-size: 14px;
-  line-height: 1.2;
 }
 
 .pdf-cv * {
@@ -442,14 +439,14 @@ main {
 }
 
 .pdf-avatar {
-  width: 160px;
+  width: 200px;
   border-radius: 50%;
   margin-left: 20px;
   margin-bottom: 8px;
 }
 
 .pdf-section {
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -472,8 +469,31 @@ main {
   margin-bottom: 5px;
 }
 .pdf-section-main p {
+  margin-bottom: 15px;
+}
+
+
+.mobile-pdf {
+  transform: scale(0.92);
+  transform-origin: top left;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.mobile-pdf .pdf-avatar {
+  width: 110px;
+}
+
+.mobile-pdf .pdf-section {
+  margin-bottom: 15px;
+}
+
+.mobile-pdf .pdf-section p {
   margin-bottom: 4px;
 }
+
+
+
 
 /* Enable clickability only on mobile devices */
 @media (max-width: 768px) {

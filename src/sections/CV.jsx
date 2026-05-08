@@ -34,6 +34,8 @@ export default function CV({ onDownloadReady }) {
   const { projects, inProgress, loading, error } = useProjects();
   const { skills: otherSkills, loading: otherSkillsLoading, error: otherSkillsError} = useOtherSkills();
 
+  const isMobile = window.innerWidth < 768;
+
   const skills = [
     { name: "JavaScript", level: 90},
     { name: "React", level: 85},
@@ -116,6 +118,12 @@ export default function CV({ onDownloadReady }) {
        alert("Wait for data");
        return;
      }
+
+    const pdfElement = pdfRef.current;
+
+    if (isMobile) {
+      pdfElement.classList.add("mobile-pdf");
+    }
    
      html2pdf().set({
         margin: 0,
@@ -141,8 +149,11 @@ export default function CV({ onDownloadReady }) {
           orientation: "portrait"
         }
       })
-        .from(pdfRef.current)
-        .save();
+      .from(pdfElement)
+      .save()
+      .then(() => {
+        pdfElement.classList.remove("mobile-pdf");
+      });
     };
     
 

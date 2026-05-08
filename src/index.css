@@ -414,6 +414,9 @@ main {
 
   overflow: hidden;
   box-sizing: border-box;
+
+  font-size: 13px;
+  line-height: 1.0;
 }
 
 .pdf-cv * {

@@ -402,10 +402,22 @@ main {
 }
 
 .pdf-cv {
-  display: flex;
-  width: 100%;
   font-family: Arial;
+
+  width: 794px;
   height: 1122px;
+
+  background: white;
+  color: black;
+
+  display: flex;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.pdf-cv * {
+  box-sizing: border-box;
 }
 
 .pdf-left {
@@ -421,6 +433,11 @@ main {
   color: #000000;
 }
 
+.pdf-left,
+.pdf-right {
+  height: 100%;
+}
+
 .pdf-avatar {
   width: 200px;
   border-radius: 50%;
@@ -429,7 +446,9 @@ main {
 }
 
 .pdf-section {
-  margin-bottom: 45px;
+  margin-bottom: 25px;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .pdf-section h3 {

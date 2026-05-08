@@ -129,7 +129,10 @@ export default function CV({ onDownloadReady }) {
         html2canvas: {
           scale: 2,
           useCORS: true,
-          letterRendering: true
+          letterRendering: true,
+
+          windowWidth: 794,
+          windowHeight: 1122
         },
 
         jsPDF: {

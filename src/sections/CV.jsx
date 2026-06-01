@@ -39,16 +39,16 @@ export default function CV({ onDownloadReady }) {
   const skills = [
     { name: "JavaScript", level: 90},
     { name: "React", level: 85},
-    { name: "Firebase", level: 80},
+    { name: "Git", level: 79},
+    { name: "Angular", level: 78},
+    { name: "React Native", level: 77},
+    { name: "Terraform", level: 77},
     { name: "Node.js", level: 75},
     { name: "TypeScript", level: 75},
-    { name: "Tailwind CSS", level: 80},
     { name: "CSS", level: 75},
-    { name: "React Native", level: 78},
     { name: "HTML", level: 75},
-    { name: "Docker", level: 75},
-    { name: "Git", level: 79},
-    { name: "Terraform", level: 78}
+    { name: "Tailwind CSS", level: 74},
+    { name: "Docker", level: 73},
   ];
 
   const sortedSkills = [...skills].sort((a, b) => b.level - a.level);
